@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @font-face {
     font-family: "MNN";
     src: url("Fonts/MononokiNerdFontMono-Regular.ttf");
@@ -50,7 +51,7 @@ body {
 #city-name {
     height: 70px;
     font-size: 35px;
-    font-family: "Inter";
+    font-family: "Poppins";
     margin-top: 0px;
     line-height: 70px;
     margin-left: 10px;
@@ -117,4 +118,9 @@ input[type=color] {
     border: 1px solid white;
     border-radius: 5px;
     font-family: "MNN";
+}
+.errors {
+    border: 1px solid red;
+    box-sizing: border-box;
+    height: 120px;
 }
