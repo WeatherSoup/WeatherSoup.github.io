@@ -46,33 +46,35 @@ bg_reset.addEventListener("click", () => {
     document.body.style.backgroundImage="linear-gradient(135deg, #8E2DE2, #4A00E0)";
 });
 
-let reset_all=document.getElementById("reset-all");
-reset_all.addEventListener("click", () => {
 
-});
+let lat;
+let lon;
 
-// let user_city;
-// geolocation
-let lat, lon;
-
-let ip_field=document.getElementById("ip-field");
-let ip_submit=document.getElementById("ip-submit");
-ip_submit.addEventListener("click", () => {
-    const city = async () => {
-        const response=await fetch(`https://ipinfo.io/${ip_field.value}?token=544c38631aa337`);
-        const data=await response.json();
-        document.getElementById("city-name").innerHTML=data.city+", "+data.region;
-        user_city=data.city;
-        console.log(data);
-        lat=data.loc.split(",")[0];
-        lon=data.loc.split(",")[1];
-
-        const getWeatherInfo = async() => {
-            const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f7ac2029e93c0d81cc9a1f46f2980ab9&units=imperial`);
-            const data=await response.json();
-            console.log(data);
-        }
-        getWeatherInfo();
+function geo_success(pos) {
+    lat=pos.coords.latitude;
+    lon=pos.coords.longitude;
+}
+function geo_error(err) {
+    if (err.code===1) {
+        alert("Please allow access to geolcation.");
+    } else {
+        alert("Could not fetch geolocation.");
     }
-    city();
+}
+if (!navigator.geolocation) {
+    throw new Error("Could not access geolocation feature.");
+}
+window.navigator.geolocation.getCurrentPosition(geo_success, geo_error, {enableHighAccuracy: true});
+
+const getWeatherInfo = async(latitude, longitude) => {
+    const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f7ac2029e93c0d81cc9a1f46f2980ab9&units=imperial`);
+    const data=await response.json();
+    console.log(latitude +" "+ longitude);
+    document.getElementById("city-name").innerText=data.name;
+    console.log(data);
+}
+
+document.getElementById("get-geo").addEventListener("click", () => {
+    window.navigator.geolocation.getCurrentPosition(geo_success, geo_error, {enableHighAccuracy: true});
+    getWeatherInfo(lat, lon);
 });

@@ -1,3 +1,5 @@
+<!-- use https://www.w3schools.com/jsref/met_geo_getcurrentposition.asp#:~:text=The%20getCurrentPosition()%20method%20returns%20the%20current%20position%20of%20the%20device. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +13,7 @@
     <div class="window">
         <div class="title-container">
             <div class="title">
-                <p id="city-name">Enter IP (arrow)</p>
+                <p id="city-name">Location will show here.</p>
             </div>
         </div>
     </div>
@@ -31,16 +33,7 @@
                 <button id="bg-reset" class="setting-button">Reset</button>
             </div>
             <div class="setting-container">
-                <button id="reset-all" class="setting-button">Reset All</button>
-            </div>
-            <div class="setting-container">
-                <p class="sc-text">UNITS:</p>
-                <button id="imperial" class="setting-button">Imperial</button>
-                <button id="metric" class="setting-button">Metric</button>
-            </div>
-            <div class="setting-container">
-                <input type="text" id="ip-field" placeholder="Enter IP Address" />
-                <button id="ip-submit" class="setting-button">Submit</button>
+                <button id="get-geo" class="setting-button">Get Geolocation</button>
             </div>
         </div>
     </div>
