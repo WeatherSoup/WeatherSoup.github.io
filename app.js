@@ -51,7 +51,10 @@ reset_all.addEventListener("click", () => {
 
 });
 
+// let user_city;
 // geolocation
+let lat, lon;
+
 let ip_field=document.getElementById("ip-field");
 let ip_submit=document.getElementById("ip-submit");
 ip_submit.addEventListener("click", () => {
@@ -59,7 +62,17 @@ ip_submit.addEventListener("click", () => {
         const response=await fetch(`https://ipinfo.io/${ip_field.value}?token=544c38631aa337`);
         const data=await response.json();
         document.getElementById("city-name").innerHTML=data.city+", "+data.region;
+        user_city=data.city;
         console.log(data);
+        lat=data.loc.split(",")[0];
+        lon=data.loc.split(",")[1];
+
+        const getWeatherInfo = async() => {
+            const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f7ac2029e93c0d81cc9a1f46f2980ab9&units=imperial`);
+            const data=await response.json();
+            console.log(data);
+        }
+        getWeatherInfo();
     }
     city();
 });
