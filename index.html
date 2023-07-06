@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Weather - Weather Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="starweather.png">
+</head>
+<body>
+    <div class="window">
+        <div class="title-container">
+            <div class="title">
+                <p id="city-name">Enter IP (arrow)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="settings-panel" id="settings-panel">
+        <p><i class="fa-solid fa-arrow-left" id="arrow"></i></p>
+        <div class="settings">
+            <div class="setting-container">
+                <p class="sc-text">FONT:</p>
+                <button id="setRegular" onclick="setTextStyleRegular()" class="setting-button">Serif</button>
+                <button id="setMono" onclick="setTextStyleMono()" class="setting-button">Mono</button>
+            </div>
+            <div class="setting-container">
+                <p class="sc-text">BACKGROUND:</p>
+                <input type="color" id="bg-color-one" value="#8E2DE2" class="bg-changer" />
+                <input type="color" id="bg-color-two" value="#4A00E0" class="bg-changer" />
+                <button id="bg-reset" class="setting-button">Reset</button>
+            </div>
+            <div class="setting-container">
+                <button id="reset-all" class="setting-button">Reset All</button>
+            </div>
+            <div class="setting-container">
+                <input type="text" id="ip-field" placeholder="Enter IP Address" />
+                <button id="ip-submit" class="setting-button">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/4931b3c0b5.js" crossorigin="anonymous"></script>
+    <script defer src="app.js"></script>
+</body>
+</html>

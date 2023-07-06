@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@font-face {
+    font-family: "MNN";
+    src: url("Fonts/MononokiNerdFontMono-Regular.ttf");
+}
+html {
+    height: 100vh;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+body {
+    height: 100%;
+    margin: 0px;
+    background-image: linear-gradient(135deg, #8E2DE2, #4A00E0);
+}
+.setting-button {
+    height: 40px;
+    width: max-content;
+    font-size: 20px;
+    margin: 0px 2px;
+    background-color: #4e5157;
+    color: white;
+    border: 1px solid rgb(122, 117, 111);
+    cursor: pointer;
+    border-radius: 2px;
+    font-family: "MNN";
+}
+.setting-button:active {
+    background-color: rgb(124, 124, 124);
+}
+.window {
+    background-color: rgba(255, 255, 255, 1);
+    height: 600px;
+    width: 500px;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.title-container {
+    height: 70px;
+    padding: 0px 10px 0px 10px;
+}
+.title {
+    border-bottom: 1px solid rgb(175, 175, 175);
+    height: 100%;
+}
+#city-name {
+    height: 70px;
+    font-size: 35px;
+    font-family: "Inter";
+    margin-top: 0px;
+    line-height: 70px;
+    margin-left: 10px;
+}
+#setRegular {
+    font-family: "Inter";
+}
+#setMono {
+    font-family: "MNN";
+}
+.setting-container {
+    display: flex;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
+    background-color: #323438;
+    border-radius: 5px;
+    margin: 0px 5px 0px 5px;
+}
+#arrow {
+    font-size: 30px;
+    color: white;
+    margin-right: 20px;
+    transition: .4s ease;
+    cursor: pointer;
+    transform: rotate(0deg);
+}
+.settings {
+    background-color: #1a1b1d;
+    width: max-content;
+    padding: 10px 5px 10px 5px;
+    border-radius: 10px;
+    display: flex;
+}
+.settings-panel {
+    transition: .4s ease;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transform: translateX(calc(100% - 45px));
+}
+.sc-text {
+    font-family: "MNN";
+    color: white;
+    font-size: 20px;
+}
+input[type=color] {
+    background: transparent;
+    border: none;
+    scale: 1.2;
+    height: 43px;
+    width: 43px;
+    outline: none;
+    cursor: pointer;
+}
+#ip-field {
+    height: 20px;
+    font-size: 20px;
+    padding: 10px;
+    background-color: rgb(61, 59, 58);
+    color: white;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-family: "MNN";
+}
